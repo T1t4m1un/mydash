@@ -13,6 +13,5 @@ export default {
       format: 'esm',
     },
   ],
-  plugins: [typescript()],
-  external: ['tslib'] // 如果你使用了 tslib，可以将其设为外部依赖
+  plugins: [typescript()]
 };
