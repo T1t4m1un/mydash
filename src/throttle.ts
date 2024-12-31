@@ -2,9 +2,7 @@ export function throttle<Fn extends (...args: any[]) => any>(fn: Fn, time: numbe
   let last_timestamp = Date.now();
   return (...args: Parameters<Fn>): undefined | ReturnType<Fn> => {
     const duration = Date.now() - last_timestamp;
-    if (duration < time) {
-      return;
-    } else {
+    if (duration >= time) {
       last_timestamp = Date.now();
       return fn();
     }
